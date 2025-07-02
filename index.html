@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conteúdo Sensual Exclusivo</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(
+          135deg,
+          #0a0a0a 0%,
+          #1a1a1a 50%,
+          #2a2a2a 100%
+        );
+        color: white;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      .urgency-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(90deg, #ff0000, #cc0000, #ff0000);
+        color: white;
+        text-align: center;
+        padding: 12px 20px;
+        font-weight: 600;
+        font-size: 16px;
+        z-index: 1000;
+        box-shadow: 0 2px 20px rgba(255, 0, 0, 0.5);
+        animation: pulse-red 2s infinite;
+      }
+
+      .timer-display {
+        font-size: 22px;
+        font-weight: 700;
+        color: #ffff00;
+        text-shadow: 0 0 10px rgba(255, 255, 0, 0.8);
+        margin: 5px 0;
+        letter-spacing: 2px;
+      }
+
+      @keyframes pulse-red {
+        0%,
+        100% {
+          box-shadow: 0 2px 20px rgba(255, 0, 0, 0.5);
+        }
+        50% {
+          box-shadow: 0 2px 30px rgba(255, 0, 0, 0.8);
+        }
+      }
+
+      .main-content {
+        margin-top: 100px;
+        padding: 40px 20px;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .header-section {
+        text-align: center;
+        margin-bottom: 60px;
+        position: relative;
+      }
+
+      .main-title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        background: linear-gradient(45deg, #ff006e, #8338ec, #3a86ff, #06ffa5);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 20px;
+        text-shadow: 0 0 30px rgba(255, 0, 110, 0.3);
+        animation: glow-text 3s ease-in-out infinite alternate;
+      }
+
+      @keyframes glow-text {
+        from {
+          filter: brightness(1);
+        }
+        to {
+          filter: brightness(1.2);
+        }
+      }
+
+      .subtitle {
+        font-size: 1.4rem;
+        color: #cccccc;
+        margin-bottom: 30px;
+        font-weight: 300;
+      }
+
+      .warning-text {
+        background: linear-gradient(90deg, #ff0000, #ff4444);
+        padding: 15px 25px;
+        border-radius: 25px;
+        display: inline-block;
+        font-weight: 600;
+        animation: blink 1.5s infinite;
+      }
+
+      @keyframes blink {
+        0%,
+        50% {
+          opacity: 1;
+        }
+        51%,
+        100% {
+          opacity: 0.7;
+        }
+      }
+
+      .plans-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 40px;
+        margin-top: 50px;
+      }
+
+      .plan-card {
+        background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+        border-radius: 25px;
+        padding: 40px 30px;
+        text-align: center;
+        position: relative;
+        transition: all 0.4s ease;
+        border: 2px solid #333;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+      }
+
+      .plan-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          45deg,
+          transparent,
+          rgba(255, 0, 110, 0.1),
+          transparent
+        );
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+
+      .plan-card:hover::before {
+        opacity: 1;
+      }
+
+      .plan-card:hover {
+        transform: translateY(-15px) scale(1.02);
+        border-color: #ff006e;
+        box-shadow: 0 25px 50px rgba(255, 0, 110, 0.3);
+      }
+
+      .plan-card.vip {
+        background: linear-gradient(145deg, #2a1a3a, #1a0f2a);
+        border: 3px solid #8338ec;
+        transform: scale(1.05);
+        position: relative;
+      }
+
+      .plan-card.vip::after {
+        content: "LIMITADO";
+        position: absolute;
+        top: 20px;
+        right: -30px;
+        background: linear-gradient(45deg, #ff0000, #ff4444);
+        color: white;
+        padding: 8px 40px;
+        font-size: 12px;
+        font-weight: 700;
+        transform: rotate(45deg);
+        box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+      }
+
+      .plan-title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        background: linear-gradient(45deg, #ff006e, #8338ec);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 25px;
+      }
+
+      .price-section {
+        margin: 30px 0;
+      }
+
+      .original-price {
+        font-size: 1.3rem;
+        color: #ff4444;
+        text-decoration: line-through;
+        position: relative;
+        margin-bottom: 10px;
+        opacity: 0.7;
+      }
+
+      .current-price {
+        font-size: 3rem;
+        font-weight: 700;
+        background: linear-gradient(45deg, #06ffa5, #00ff88);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: 0 0 20px rgba(6, 255, 165, 0.5);
+        margin-bottom: 20px;
+      }
+
+      .features-list {
+        list-style: none;
+        text-align: left;
+        margin: 25px 0;
+      }
+
+      .features-list li {
+        margin: 12px 0;
+        padding-left: 30px;
+        position: relative;
+        color: #e0e0e0;
+        font-weight: 400;
+      }
+
+      .features-list li::before {
+        content: "💋";
+        position: absolute;
+        left: 0;
+        font-size: 16px;
+      }
+
+      .buy-button {
+        background: linear-gradient(45deg, #ff006e, #8338ec);
+        color: white;
+        border: none;
+        padding: 18px 40px;
+        font-size: 1.2rem;
+        font-weight: 700;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        width: 100%;
+        margin-top: 25px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .buy-button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
+
+      .buy-button:hover::before {
+        left: 100%;
+      }
+
+      .buy-button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 35px rgba(255, 0, 110, 0.4);
+      }
+
+      .discount-badge {
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        background: linear-gradient(45deg, #ff0000, #ff4444);
+        color: white;
+        padding: 10px 15px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 700;
+        transform: rotate(-15deg);
+        box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+        z-index: 2;
+      }
+
+      .floating-hearts {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      .heart {
+        position: absolute;
+        color: rgba(255, 0, 110, 0.1);
+        font-size: 20px;
+        animation: float-heart 8s infinite linear;
+      }
+
+      @keyframes float-heart {
+        0% {
+          transform: translateY(100vh) rotate(0deg);
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        90% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-100px) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .main-title {
+          font-size: 2.5rem;
+        }
+
+        .plans-grid {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+
+        .plan-card.vip {
+          transform: none;
+        }
+
+        .urgency-bar {
+          font-size: 14px;
+          padding: 10px 15px;
+        }
+
+        .timer-display {
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="urgency-bar">
+      ⚠️ OFERTA RELÂMPAGO: <span class="timer-display" id="timer">5:00</span>
+    </div>
+
+    <div class="floating-hearts" id="heartsContainer"></div>
+
+    <div class="main-content">
+      <div class="container">
+        <div class="header-section">
+          <h1 class="main-title">Conteúdo Sensual Exclusivo</h1>
+          <p class="subtitle">
+            Experiências íntimas e personalizadas só para você
+          </p>
+          <div class="warning-text">
+            🔥 Preços promocionais por tempo limitado!
+          </div>
+        </div>
+
+        <div class="plans-grid">
+          <!-- Plano Sedução -->
+          <div class="plan-card">
+            <div class="discount-badge">53% OFF</div>
+            <h2 class="plan-title">✨ Plano Sedução</h2>
+            <div class="price-section">
+              <div class="original-price">R$ 14,90</div>
+              <div class="current-price">R$ 6,90</div>
+            </div>
+            <ul class="features-list">
+              <li>100 fotos sensuais exclusivas</li>
+              <li>Vídeos personalizados feitos para você</li>
+              <li>Acesso imediato ao conteúdo</li>
+              <li>Qualidade HD garantida</li>
+            </ul>
+            <button class="buy-button">🛒 Comprar</button>
+          </div>
+
+          <!-- Plano Fetiche -->
+          <div class="plan-card">
+            <div class="discount-badge">49% OFF</div>
+            <h2 class="plan-title">🔥 Plano Fetiche</h2>
+            <div class="price-section">
+              <div class="original-price">R$ 24,90</div>
+              <div class="current-price">R$ 12,60</div>
+            </div>
+            <ul class="features-list">
+              <li>Vídeos transando intensos</li>
+              <li>Conteúdo bem safado e explícito</li>
+              <li>Fetiches realizados</li>
+              <li>Material sem censura</li>
+            </ul>
+            <button class="buy-button">🛒 Comprar</button>
+          </div>
+
+          <!-- Plano Intimidade -->
+          <div class="plan-card">
+            <div class="discount-badge">43% OFF</div>
+            <h2 class="plan-title">💕 Plano Intimidade</h2>
+            <div class="price-section">
+              <div class="original-price">R$ 39,90</div>
+              <div class="current-price">R$ 22,90</div>
+            </div>
+            <ul class="features-list">
+              <li>Chamada de vídeo de 15 minutos</li>
+              <li>Pack com 250 fotos exclusivas</li>
+              <li>Interação direta e pessoal</li>
+              <li>Momentos íntimos únicos</li>
+            </ul>
+            <button class="buy-button">🛒 Comprar</button>
+          </div>
+
+          <!-- Plano VIP -->
+          <div class="plan-card vip">
+            <div class="discount-badge">58% OFF</div>
+            <h2 class="plan-title">👑 Plano VIP</h2>
+            <div class="price-section">
+              <div class="original-price">R$ 118,00</div>
+              <div class="current-price">R$ 49,99</div>
+            </div>
+            <ul class="features-list">
+              <li>100 vídeos exclusivos</li>
+              <li>500 fotos em alta resolução</li>
+              <li>Chamada de vídeo de 30 minutos</li>
+              <li>Prioridade nos pedidos personalizados</li>
+              <li>Acesso vitalício ao conteúdo</li>
+              <li>Suporte 24/7 exclusivo</li>
+            </ul>
+            <button class="buy-button">🛒 Comprar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Timer de 5 minutos
+      let timeLeft = 300; // 5 minutos em segundos
+
+      function updateTimer() {
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
+        const timerElement = document.getElementById("timer");
+
+        timerElement.textContent = `${minutes}:${seconds
+          .toString()
+          .padStart(2, "0")}`;
+
+        if (timeLeft > 0) {
+          timeLeft--;
+        } else {
+          timeLeft = 300; // Reinicia quando chega a zero
+        }
+      }
+
+      // Atualiza o timer a cada segundo
+      setInterval(updateTimer, 1000);
+
+      // Reinicia timer quando a página carrega
+      window.addEventListener("load", function () {
+        timeLeft = 300;
+      });
+
+      // Efeito de corações flutuantes
+      function createHeart() {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "💋";
+        heart.style.left = Math.random() * 100 + "%";
+        heart.style.animationDelay = Math.random() * 8 + "s";
+        document.getElementById("heartsContainer").appendChild(heart);
+
+        // Remove o coração após a animação
+        setTimeout(() => {
+          heart.remove();
+        }, 8000);
+      }
+
+      // Cria corações periodicamente
+      setInterval(createHeart, 2000);
+
+      // Efeito nos botões
+      document.querySelectorAll(".buy-button").forEach((button) => {
+        button.addEventListener("click", function () {
+          this.style.transform = "scale(0.95)";
+          setTimeout(() => {
+            this.style.transform = "scale(1.05)";
+          }, 150);
+
+          // Efeito de confirmação
+          this.innerHTML = "✓ Processando...";
+          setTimeout(() => {
+            this.innerHTML =
+              this.getAttribute("data-original") || "Comprar Agora";
+          }, 2000);
+        });
+
+        // Salva o texto original
+        button.setAttribute("data-original", button.innerHTML);
+      });
+
+      // Efeito de hover nos cards
+      document.querySelectorAll(".plan-card").forEach((card) => {
+        card.addEventListener("mouseenter", function () {
+          this.style.zIndex = "10";
+        });
+
+        card.addEventListener("mouseleave", function () {
+          this.style.zIndex = "1";
+        });
+      });
+    </script>
+  </body>
+</html>
