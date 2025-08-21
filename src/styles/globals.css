@@ -1,0 +1,129 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+  min-height: 100vh;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Glass Effect */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.8);
+}
+
+/* Animações */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Custom Icon para fallback da logo */
+.custom-icon {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.moon {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+}
+
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 2s infinite;
+}
+
+.star1 {
+  width: 2px;
+  height: 2px;
+  top: 15%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.star2 {
+  width: 1.5px;
+  height: 1.5px;
+  top: 25%;
+  right: 15%;
+  animation-delay: 0.7s;
+}
+
+.star3 {
+  width: 2px;
+  height: 2px;
+  bottom: 20%;
+  left: 30%;
+  animation-delay: 1.4s;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* Estilos para classes de imagem dos produtos */
+.netflix { background: linear-gradient(135deg, #e50914, #b20710); }
+.prime { background: linear-gradient(135deg, #00a8e1, #0073a8); }
+.youtube { background: linear-gradient(135deg, #ff0000, #cc0000); }
+.spotify { background: linear-gradient(135deg, #1db954, #1aa34a); }
+.canva { background: linear-gradient(135deg, #00c4cc, #00a0a8); }
+.google { background: linear-gradient(135deg, #4285f4, #3367d6); }
+.chatgpt { background: linear-gradient(135deg, #00a67e, #008060); }
+.duolingo { background: linear-gradient(135deg, #58cc02, #46a302); }
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .glass-effect {
+    backdrop-filter: blur(15px);
+  }
+}
